@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: aliceblue;
+}
+.bmi-form {
+  height: 300px;
+  width: 350px;
+  margin: 120px auto;
+  background-color: lightblue;
+  border: 2px solid black;
+
+}
+.bmi-form > h1 {
+  text-align: center;
+}
+.weight > label,
+.height > label {
+  display: block;
+  padding: 5px 5px;
+  font-weight: bold;
+}
+input[type="text"] {
+  padding: 8px;
+  width: 100%;
+}
+.weight{
+  margin: 8px;
+}
+.height{
+  margin: 8px;
+}
+.op-display{
+  margin: 8px;
+}
+button[type="submit"]{
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+}
