@@ -45,11 +45,29 @@ const Services = () => {
         <div className="container">
           {/* header sections */}
           <div className="pb-12 text-center space-y-3">
-            <h1 className="text-3xl font-semibold text-violet-950 dark:text-purple-400">Explore Our Services</h1>
+            <h1 className="text-3xl font-semibold text-violet-950 dark:text-purple-400">
+              Explore Our Services
+            </h1>
             <p>
               we are cutratetraveller we provide you a best guidance to expolre
               the most beautiful place across the globe with minimum cost
             </p>
+          </div>
+          {/* card sections */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+            {SkillData.map((skill) => (
+              <div key={skill.name} className="card space-y-3 sm:space-y-4 p-4">
+                <div>{skill.icon}</div>
+                <h1 className="text-lg font-semibold">{skill.name}</h1>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {skill.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          {/* button sections */}
+          <div className="text-center mt-4 sm:mt-8">
+            <button className="btn-primary">Explore More</button> 
           </div>
         </div>
       </div>
