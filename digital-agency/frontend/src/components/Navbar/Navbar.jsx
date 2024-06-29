@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import DarkMode from "./DarkMode";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
+// digital agency
 export const MenuLinks = [
   {
     id: 1,
@@ -92,4 +93,3 @@ const Navbar = () => {
   );
 };
 export default Navbar;
- 
