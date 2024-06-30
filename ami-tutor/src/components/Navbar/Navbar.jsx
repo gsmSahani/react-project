@@ -3,6 +3,7 @@ import ThemeContext from "../../helper/ThemeContext";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import DarkMode from "./DarkMode";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
@@ -25,7 +26,7 @@ const Navbar = () => {
             Ami Tutor
           </Link>
         </div>
-        {/* Desktop View */}
+
         <div className="hidden md:flex space-x-8 gap-5">
           <NavLink
             to="/"
@@ -55,18 +56,10 @@ const Navbar = () => {
           >
             Course
           </NavLink>
-          {/* <NavLink
-            to="/contact-us"
-            className={`${({ isActive }) =>
-              isActive
-                ? "text-blue-600 font-semibold"
-                : "text-gray-600 hover:text-blue-600"}dark:bg-black dark:text-white`}
-          >
-            Contact
-          </NavLink> */}
+
           <DarkMode />
         </div>
-        {/* Mobile View */}
+
         <div className="md:hidden flex items-center ">
           <DarkMode />
           <button
@@ -78,7 +71,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Sidebar Menu */}
       <div
         className={`fixed top-0 left-0 h-full bg-white shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
@@ -133,18 +125,7 @@ const Navbar = () => {
               Course
             </NavLink>
           </li>
-          <li>
-            {/* <NavLink
-              to="/contact-us"
-              className={`${({ isActive }) =>
-                isActive
-                  ? "text-blue-600 font-semibold"
-                  : "text-gray-600 hover:text-blue-600"}dark:bg-black dark:text-white`}
-              onClick={closeMenu}
-            >
-              Contact
-            </NavLink> */}
-          </li>
+          <li></li>
         </ul>
       </div>
     </nav>

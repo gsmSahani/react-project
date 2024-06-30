@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.font-playwrite-mx {
-  font-family: "Playwrite MX", cursive;
-}
 .playfair-display-sc-bold-italic {
   font-family: "Playfair Display SC", serif;
   font-weight: 700;
@@ -13,13 +10,4 @@
 }
 body {
   @apply overflow-x-hidden;
-}
-
-@layer utilities {
-  .text-hollow {
-    color: transparent;
-    -webkit-text-stroke: 2px rgb(202, 193, 193);
-    padding: 10px;
-    display: inline-block;
-  }
 }

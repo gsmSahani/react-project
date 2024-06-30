@@ -10,11 +10,7 @@ const NavbarMenuLinks = [
     item: "About",
     link: "/about",
   },
-  // {
-  //   id: 3,
-  //   item: "Contact",
-  //   link: "/contact-us",
-  // },
+  
   {
     id: 4,
     item: "Courses",
