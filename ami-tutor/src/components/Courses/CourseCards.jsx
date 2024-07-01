@@ -2,13 +2,14 @@ import React from "react";
 import { FaUserGraduate } from "react-icons/fa";
 import handleEnrollNow from "../../helper/handleEnrollNow";
 
-const CourseCard = ({
+const CourseCards = ({
   title,
   duration,
   schedule,
   learningPeriod,
   fees,
-  topics,
+  topics = [],
+  commonTopicsMessage = "",
   bgColorTopics,
 }) => {
   return (
@@ -39,7 +40,13 @@ const CourseCard = ({
         <div className="mt-4">
           <p className="font-semibold my-3">Topics Included:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-gray-500">
+          {commonTopicsMessage && (
+            <div className=" p-3 rounded-lg text-center font-medium bg-green-700 text-black">
+              {commonTopicsMessage}
+            </div>
+          )}
             {topics.map((topic, index) => (
+              
               <div
                 key={index}
                 className={`p-3 rounded-lg text-center font-medium ${
@@ -50,6 +57,7 @@ const CourseCard = ({
               </div>
             ))}
           </div>
+          
         </div>
 
         <div className="mt-8 flex justify-center">
@@ -66,4 +74,4 @@ const CourseCard = ({
   );
 };
 
-export default CourseCard;
+export default CourseCards;

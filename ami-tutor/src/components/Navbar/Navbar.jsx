@@ -65,8 +65,9 @@ const Navbar = () => {
           <button
             onClick={toggleMenu}
             className="text-gray-800 focus:outline-none dark:bg-black dark:text-white"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            <FaBars size={24} />
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
@@ -83,8 +84,9 @@ const Navbar = () => {
           <button
             onClick={toggleMenu}
             className="text-gray-800 focus:outline-none dark:bg-black dark:text-white"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            <FaTimes size={24} />
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
         <ul className="flex flex-col p-4 space-y-4 dark:bg-black dark:text-white">

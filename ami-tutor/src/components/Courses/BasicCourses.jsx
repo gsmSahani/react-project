@@ -1,5 +1,5 @@
 import React from "react";
-import CourseCard from "./CoursesCard";
+import CourseCards from "./CourseCards";
 import basicTopics from "../../config/basicsTopics";
 import bgColorTopics from "../../helper/bgColorTopics";
 
@@ -8,7 +8,7 @@ const BasicCourses = () => {
     <div className="bg-slate-200 py-12 dark:bg-gray-600">
       <div className="container mx-auto px-4">
         <div className="flex justify-center">
-          <CourseCard
+          <CourseCards
             title="Basic English Course"
             duration="60 days - 2 Months"
             schedule="Monday to Saturday"

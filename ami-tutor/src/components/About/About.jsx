@@ -45,9 +45,9 @@ const About = () => {
                 </div>
               </div>
               <div className="w-full sm:px-6 md:px-8 lg:px-8 text-center md:text-left md:w-3/4">
-                <h3 className="sm:px-2 playfair-display-sc-bold-italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest">
+                <h1 className="sm:px-2 playfair-display-sc-bold-italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-widest">
                   Ami Patel
-                </h3>
+                </h1>
 
                 <p className="text-base sm:text-lg md:text-lg lg:text-xl mt-4 px-4 sm:px-2">
                   Welcome to my spoken English coaching center! I am passionate
@@ -69,11 +69,11 @@ const About = () => {
 
                 <div className="flex justify-center sm:justify-start md:justify-start my-3">
                   <button
-                    className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" aria-label="Get in Touch"
                     onClick={handleWhatsAppMessage}
                   >
                     <FaWhatsapp />
-                    <span>Get in Touch</span>
+                    <span >Get in Touch</span>
                   </button>
                 </div>
               </div>
