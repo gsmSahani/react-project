@@ -1,6 +1,6 @@
 import React from "react";
 import { FaUserGraduate } from "react-icons/fa";
-import handleEnrollNow from "../../helper/handleEnrollNow";
+import { handleEnrollNow } from "../../helper/handleButtonEvents";
 
 const CourseCards = ({
   title,

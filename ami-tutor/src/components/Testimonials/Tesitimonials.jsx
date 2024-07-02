@@ -1,34 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Slider from "react-slick";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import testimonyImg from "../../assets/image/gautam-testimonials.webp";
 import { Helmet } from "react-helmet-async";
-
-const testimonialsData = [
-  {
-    name: "Gautam Sahani",
-    feedback:
-      "The classes were amazing! I improved my English skills significantly. The classes were amazing! I improved my English skills significantly. The classes were amazing! I improved my English skills significantly.",
-    image: testimonyImg,
-    rating: 5,
-  },
-  {
-    name: "Jane Smith",
-    feedback:
-      "A wonderful experience with great teachers and interactive lessons.",
-    image: "https://via.placeholder.com/150",
-    rating: 4,
-  },
-  {
-    name: "Mike Johnson",
-    feedback:
-      "Highly recommend these classes for anyone looking to improve their English.",
-    image: "https://via.placeholder.com/150",
-    rating: 3,
-  },
-];
+import LazyLoad from "react-lazyload";
+import testimonialsData from "../../config/testimonialsData";
 
 const truncateText = (text, wordLimit) => {
   const words = text.split(" ");
@@ -41,8 +18,8 @@ const Testimonials = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 1,
+    speed: 1000,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -50,6 +27,20 @@ const Testimonials = () => {
     centerMode: true,
     centerPadding: "0px",
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const [userRatings, setUserRatings] = useState(
@@ -62,7 +53,7 @@ const Testimonials = () => {
     setUserRatings(newRatings);
   };
 
-  const renderStars = (rating, index) => {
+  const renderStars = useMemo(() => (rating, index) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating - fullStars >= 0.5 ? 1 : 0;
     const emptyStars = 5 - fullStars - halfStar;
@@ -94,12 +85,12 @@ const Testimonials = () => {
         <span className="ml-2">{rating.toFixed(1)}</span>
       </div>
     );
-  };
+  }, [userRatings]);
 
   return (
     <>
       <Helmet>
-        <title> Spoken English Coaching in Pardi Valsad</title>
+        <title>Spoken English Coaching in Pardi Valsad</title>
         <meta
           name="description"
           content="Read testimonials from our students and learn how our English coaching center in Pardi Valsad, Gujarat, has helped them improve their skills."
@@ -112,23 +103,27 @@ const Testimonials = () => {
         <div className="container mx-auto w-full px-4 py-8 overflow-x-hidden dark:text-white dark:bg-gray-600 rounded-2xl">
           <Slider {...settings} className="dark:bg-gray-600">
             {testimonialsData.map((testimonial, index) => (
-              <div
-                key={index}
-                className="p-6 flex justify-center overflow-x-hidden dark:text-white"
-              >
-                <div className="max-w-lg mx-auto rounded-lg shadow-lg p-6 flex flex-col items-center text-center bg-slate-200 dark:bg-black">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-24 h-24 rounded-full mb-4 object-cover"
-                  />
-                  <h3 className="text-xl font-bold mb-2">{testimonial.name}</h3>
-                  {renderStars(userRatings[index], index)}
-                  <p className="text-gray-600 overflow-hidden overflow-ellipsis max-h-32">
-                    {truncateText(testimonial.feedback, 50)}
-                  </p>
+              <LazyLoad key={index} height={200} offset={100}>
+                <div className="p-6 flex justify-center overflow-x-hidden dark:text-white">
+                  <div className="max-w-lg h-96 mx-auto rounded-lg shadow-lg p-6 flex flex-col items-center text-center bg-slate-200 dark:bg-black">
+                    <LazyLoad height={150} offset={100}>
+                      <img
+                        src={testimonial.image.replace(/\.jpg|\.png/, ".webp")}
+                        alt={testimonial.name}
+                        className="w-24 h-24 rounded-full mb-4 object-cover"
+                        style={{ width: "150px", height: "150px" }}
+                      />
+                    </LazyLoad>
+                    <h3 className="text-xl font-bold mb-2">
+                      {testimonial.name}
+                    </h3>
+                    {renderStars(userRatings[index], index)}
+                    <p className="text-gray-600 overflow-hidden overflow-ellipsis max-h-32">
+                      {truncateText(testimonial.feedback, 50)}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </LazyLoad>
             ))}
           </Slider>
         </div>

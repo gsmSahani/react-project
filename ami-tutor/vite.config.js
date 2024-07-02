@@ -1,19 +1,21 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-
 import viteCompression from "vite-plugin-compression";
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   plugins: [
     react(),
-
     viteCompression({
-      algorithm: "brotliCompress",
+      algorithm: "brotliCompress", 
     }),
-
+    viteCompression({
+      algorithm: "gzip", 
+    }),
+    visualizer({ open: true }), 
   ],
   build: {
-    minify: true,
+    minify: "esbuild", 
     sourcemap: false,
     rollupOptions: {
       output: {
@@ -26,6 +28,9 @@ export default defineConfig({
               .toString();
           }
         },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash][extname]'
       },
     },
   },

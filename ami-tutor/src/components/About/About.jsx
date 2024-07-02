@@ -2,7 +2,7 @@ import React from "react";
 import Profile from "../../assets/image/ami profile.webp";
 import { FaWhatsapp } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-import handleWhatsAppMessage from "../../helper/handleWhatsappMessage";
+import { handleWhatsAppMessage } from "../../helper/handleButtonEvents";
 const About = () => {
   return (
     <>

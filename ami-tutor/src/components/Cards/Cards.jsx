@@ -1,7 +1,6 @@
 import React from "react";
 import { FaWhatsapp, FaUserGraduate } from "react-icons/fa";
-import sendWhatsAppMessage from "../../helper/sendWhatsAppMessage";
-import handleEnrollNow from "../../helper/handleEnrollNow";
+import { handleWhatsAppMessage,handleEnrollNow } from "../../helper/handleButtonEvents";
 import cardData from "../../config/pricingCard";
 import renderButton from "../../helper/renderButton";
 
@@ -27,7 +26,7 @@ const Cards = () => {
               <div className="flex flex-col md:flex-row justify-center md:justify-between lg:justify-start lg:gap-2 space-y-4 md:space-y-0 md:space-x-4">
                 {renderButton(
                   "WhatsApp",
-                  () => sendWhatsAppMessage(title),
+                  () => handleWhatsAppMessage(title),
                   FaWhatsapp,
                   true
                 )}

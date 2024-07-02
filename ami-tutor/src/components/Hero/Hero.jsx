@@ -3,6 +3,7 @@ import Homepage from "../../assets/image/hero students.webp";
 import { FaUserPlus } from "react-icons/fa";
 import ThemeContext from "../../helper/ThemeContext";
 
+import { handleWhatsAppMessage } from "../../helper/handleButtonEvents";
 const Hero = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
@@ -12,6 +13,7 @@ const Hero = () => {
     backgroundColor: `rgba(0, 0, 0, ${overlayOpacity})`,
     transition: "opacity 0.3s ease",
   };
+
 
   return (
     <div className="relative flex items-center justify-center h-screen w-full">
@@ -38,6 +40,7 @@ const Hero = () => {
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
             aria-label="Join Now"
+            onClick={handleWhatsAppMessage}
           >
             <FaUserPlus />
             <span>Join Now</span>

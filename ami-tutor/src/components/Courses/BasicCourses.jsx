@@ -1,6 +1,6 @@
 import React from "react";
 import CourseCards from "./CourseCards";
-import basicTopics from "../../config/basicsTopics";
+import { basicTopics } from "../../config/courseTopics";
 import bgColorTopics from "../../helper/bgColorTopics";
 
 const BasicCourses = () => {

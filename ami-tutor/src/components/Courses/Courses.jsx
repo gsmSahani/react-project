@@ -2,7 +2,7 @@ import React from "react";
 import BasicCourses from "./BasicCourses";
 import AdvanceCourse from "./AdvanceCourse";
 import { Helmet } from "react-helmet-async";
-
+import Cirriculam from "./Cirriculam";
 const Courses = () => {
   return (
     <>
@@ -14,8 +14,7 @@ const Courses = () => {
         />
       </Helmet>
       <div className="dark:bg-gray-600">
-        <BasicCourses />
-        <AdvanceCourse />
+        <Cirriculam/>
         <div className="container mx-auto px-4 py-8 dark:bg-gray-600 dark:text-white">
           <div className="bg-gray-100 dark:bg-black p-6 rounded-lg shadow-lg mt-8">
             <h2 className="text-2xl font-bold mb-4">Perks of Joining</h2>

@@ -9,9 +9,9 @@ const DarkMode = () => {
   return (
     <>
       {theme === "dark" ? (
-        <BiSolidSun className="text-2xl" onClick={toggleTheme} />
+        <BiSolidSun className="text-2xl cursor-pointer" onClick={toggleTheme} />
       ) : (
-        <BiSolidMoon className="text-2xl" onClick={toggleTheme} />
+        <BiSolidMoon className="text-2xl cursor-pointer" onClick={toggleTheme} />
       )}
     </>
   );

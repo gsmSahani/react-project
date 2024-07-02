@@ -20,17 +20,22 @@ const Navbar = () => {
   const isDarkMode = theme === "dark";
 
   return (
-    <nav className="bg-white shadow-md relative dark:bg-black dark:text-white duration-400">
+    <nav className="bg-white shadow-lg relative font-bold dark:bg-black dark:text-white duration-400">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="text-2xl font-bold text-gray-800 dark:bg-black dark:text-white">
-            <img 
-              src={Logo} 
-              alt="Modern English Classes Logo" 
-              className={`h-8 w-auto md:h-10 ${isDarkMode ? 'bg-transparent' : 'bg-white'}`}
-              style={{ width: "150px", height: "50px" }} // Set explicit width and height here
-              width="150" // Optional: Set explicit width attribute
-              height="50" // Optional: Set explicit height attribute
+          <Link
+            to="/"
+            className="text-2xl font-bold text-gray-800 dark:bg-black dark:text-white"
+          >
+            <img
+              src={Logo}
+              alt="Modern English Classes Logo"
+              className={`h-8 w-auto md:h-10 ${
+                isDarkMode ? "bg-transparent" : "bg-white"
+              }`}
+              style={{ width: "150px", height: "50px" }}
+              width="150"
+              height="50"
             />
           </Link>
         </div>
@@ -85,18 +90,23 @@ const Navbar = () => {
       <div
         className={`fixed top-0 left-0 h-full bg-white shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 w-3/4 z-50 dark:bg-black dark:text-white`}
+        } transition-transform duration-300 w-3/4 z-50 dark:bg-black dark:text-white `}
       >
         <div className="flex justify-between items-center p-4 border-b dark:bg-black dark:text-white">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-gray-800 dark:bg-black dark:text-white">
-              <img 
-                src={Logo} 
-                alt="Modern English Classes Logo" 
-                className={`h-8 w-auto md:h-10 ${isDarkMode ? 'bg-transparent' : 'bg-white'}`}
-                style={{ width: "150px", height: "50px" }} // Set explicit width and height here
-                width="150" // Optional: Set explicit width attribute
-                height="50" // Optional: Set explicit height attribute
+            <Link
+              to="/"
+              className="text-2xl font-bold text-gray-800 dark:bg-black dark:text-white"
+            >
+              <img
+                src={Logo}
+                alt="Modern English Classes Logo"
+                className={`h-8 w-auto md:h-10 ${
+                  isDarkMode ? "bg-transparent" : "bg-white"
+                }`}
+                style={{ width: "150px", height: "50px" }}
+                width="150"
+                height="50"
               />
             </Link>
           </div>
