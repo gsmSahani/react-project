@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+
 import viteCompression from "vite-plugin-compression";
 
 export default defineConfig({
@@ -9,9 +10,11 @@ export default defineConfig({
     viteCompression({
       algorithm: "brotliCompress",
     }),
-    
+
   ],
   build: {
+    minify: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks(id) {
