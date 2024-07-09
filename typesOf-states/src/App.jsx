@@ -1,5 +1,7 @@
 import React from "react";
-import UseMemoHooks from "./Components/UseMemo/UseMemoHooks";
+import Parent from "./Components/UseCallBackHook/Parent";
+// import UseCallbackHook from "./Components/UseCallBackHook/UseCallbackHook";
+// import UseMemoHooks from "./Components/UseMemo/UseMemoHooks";
 // import SignIn from "./Components/SignIn/SignIn";
 // import UseStateTutorial from "./Components/UseStateTutorial/UseStateTutorial";
 // import Form from "./Components/Form/Form";
@@ -12,7 +14,9 @@ const App = () => {
       {/* <SignIn /> */}
       {/* <Counter3 /> */}
       {/* <Form /> */}
-      <UseMemoHooks />
+      {/* <UseMemoHooks /> */}
+      {/* <UseCallbackHook /> */}
+      <Parent />
     </>
   );
 };
