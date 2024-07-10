@@ -1,5 +1,5 @@
 import React from "react";
-import Boat from "../../assets/places/boat.jpg";
+import Boat from "../../assets/";
 import Water from "../../assets/places/water.jpg";
 import Place4 from "../../assets/places/place4.jpg";
 import Place5 from "../../assets/places/place5.jpg";
